@@ -7,16 +7,26 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <form>
-        <input type="text" id="SSN" placeholder="SSN">
-        <input type="text" id="fName" placeholder="First Name">
-        <input type="text" id="lName" placeholder="Last Name">
-        <input type="text" id="DOB" placeholder="DOB">
-        <input type="text" id="phone" placeholder="Phone Number">
-        <input type="text" id="email" placeholder="Email Address">
-        <!-- set button onClick method to call function we defined passing input values as parameters -->
-        <button type="button" onclick="callAPI(document.getElementById('SSN').value, document.getElementById('fName').value, document.getElementById('lName').value, document.getElementById('DOB').value, document.getElementById('phone').value, document.getElementById('email').value)">Add</button>
-    </form>
+    
+    <button type="submit" id="search-button" onclick="openPopup()">Add</button>
+    <div class="overlay"></div>
+    
+    <div class="popup">
+        <form>
+            <label>Please enter the details below:</label>
+            <input type="text" id="SSN" placeholder="SSN">
+            <input type="text" id="fName" placeholder="First Name">
+            <input type="text" id="lName" placeholder="Last Name">
+            <input type="text" id="DOB" placeholder="DOB">
+            <input type="text" id="phone" placeholder="Phone Number">
+            <input type="text" id="email" placeholder="Email Address">
+            <!-- set button onClick method to call function we defined passing input values as parameters -->
+            <button type="button" onclick="callAPI(document.getElementById('SSN').value, document.getElementById('fName').value, document.getElementById('lName').value, document.getElementById('DOB').value, document.getElementById('phone').value, document.getElementById('email').value)">Add</button>
+            <button type='button' onclick="closePopup()">Close</button>
+        </form>
+    </div>
+    
+    
     <script src="js/script.js"></script>
 </body>
 </html>

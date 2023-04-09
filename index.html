@@ -2,10 +2,25 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Patient Database</title>
-    <link rel="stylesheet" href="css/styles.css">
-
-
+    <title>Hello World</title>
+    <!-- Add some CSS to change client UI -->
+    <style>
+    body {
+        background-color: #232F3E;
+        }
+    label, button {
+        color: #FF9900;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        margin-left: 40px;
+        }
+     input {
+        color: #232F3E;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        margin-left: 20px;
+        }
+    </style>
     <script>
         // define the callAPI function that takes a first name and last name as parameters
         var callAPI = (SSN,firstName,lastName,DOB,phone,email)=>{
@@ -28,26 +43,12 @@
             .then(result => alert(JSON.parse(result).body))
             .catch(error => console.log('error', error));
         }
-
     </script>
 </head>
 <body>
-
-    <h3>Welcome to the National Patient Database</h3>
-    
-    <div>
-        <input type="text" id="search-input" placeholder="Please Enter SSN">
-        <button type="button" id="search-button" onclick="getPatientRecord(document.getElementById('SSN').value)">Search</button>
-
-        <button type="submit" id="search-button" onclick="openPopup()">Add</button>
-    
-    </div>
-    
-
     <div class="overlay"></div>
     <div class="popup">
       <form>
-        <label>Please enter the details below:</label>
         <input type="text" id="SSN" placeholder="SSN">
         <input type="text" id="fName" placeholder="First Name">
         <input type="text" id="lName" placeholder="Last Name">
@@ -59,10 +60,5 @@
         <button type='button' onclick="closePopup()">Close</button>
       </form>
     </div>
-
-</br>
-
-
-    <script src="js/script.js"></script>
 </body>
 </html>

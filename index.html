@@ -23,13 +23,13 @@
     </style>
     <script>
         // define the callAPI function that takes a first name and last name as parameters
-        var callAPI = (firstName,lastName)=>{
+        var callAPI = (SSN,firstName,lastName,DOB,phone,email)=>{
             // instantiate a headers object
             var myHeaders = new Headers();
             // add content type header to object
             myHeaders.append("Content-Type", "application/json");
             // using built in JSON utility package turn object to string and store in a variable
-            var raw = JSON.stringify({"firstName":firstName,"lastName":lastName});
+            var raw = JSON.stringify({"SSN":SSN,"firstName":firstName,"lastName":lastName,"DOB":DOB,"phone":phone,"email":email});
             // create a JSON object with parameters for API call and store in a variable
             var requestOptions = {
                 method: 'POST',
@@ -47,12 +47,13 @@
 </head>
 <body>
     <form>
-        <label>First Name :</label>
-        <input type="text" id="fName">
-        <label>Last Name :</label>
-        <input type="text" id="lName">
+        <input type="text" id="SSN" placeholder="SSN">
+        <input type="text" id="fName" placeholder="First Name">
+        <input type="text" id="lName" placeholder="Last Name">
+        <input type="text" id="phone" placeholder="Phone Number">
+        <input type="text" id="email" placeholder="Email Address">
         <!-- set button onClick method to call function we defined passing input values as parameters -->
-        <button type="button" onclick="callAPI(document.getElementById('fName').value,document.getElementById('lName').value)">Call API</button>
+        <button type="button" onclick="callAPI(document.getElementById('SSN').value, document.getElementById('fName').value, document.getElementById('lName').value, document.getElementById('DOB').value, document.getElementById('phone').value, document.getElementById('email').value)">Add</button>
     </form>
 </body>
 </html>

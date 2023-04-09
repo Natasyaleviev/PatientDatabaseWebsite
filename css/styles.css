@@ -3,6 +3,21 @@ body {
     background-color: #F6F1F1;
 }
 
+h3 {
+  text-align: center;
+  margin-top: 10em;
+}
+
+.search {
+  top: 60%;
+  left: 50%;
+  width: 50em;
+  margin-top: -9em;
+  margin-left: -18em;
+  position: fixed;
+}
+
+
 #search-form {
     display: flex;
     justify-content: center;

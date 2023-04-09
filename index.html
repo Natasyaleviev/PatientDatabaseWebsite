@@ -8,7 +8,7 @@
 
     <script>
         // define the callAPI function that takes a first name and last name as parameters
-        var addPatient = (SSN,firstName,lastName,DOB,phone,email)=>{
+        var callAPI = (SSN,firstName,lastName,DOB,phone,email)=>{
             // instantiate a headers object
             var myHeaders = new Headers();
             // add content type header to object
@@ -48,20 +48,21 @@
     <div class="popup">
       <form>
         <label>Please enter the details below:</label>
-        <input type="text" id="site" placeholder="Site">
-        <input type="text" id="username" placeholder="Username">
-        <input type="text" id="phone" placeholder="Password">
-        <input type="text" id="email" placeholder="Link">
+        <input type="text" id="SSN" placeholder="SSN">
+        <input type="text" id="fName" placeholder="First Name">
+        <input type="text" id="lName" placeholder="Last Name">
+        <input type="text" id="phone" placeholder="Phone Number">
+        <input type="text" id="email" placeholder="Email Address">
       
         <!-- set button onClick method to call function we defined passing input values as parameters -->
-        <button type="button" onclick="addPatient(document.getElementById('site').value, document.getElementById('fName').value, document.getElementById('lName').value, document.getElementById('DOB').value, document.getElementById('phone').value, document.getElementById('email').value)">Add</button>
+        <button type="button" onclick="callAPI(document.getElementById('SSN').value, document.getElementById('fName').value, document.getElementById('lName').value, document.getElementById('DOB').value, document.getElementById('phone').value, document.getElementById('email').value)">Add</button>
         <button type='button' onclick="closePopup()">Close</button>
       </form>
     </div>
 
 </br>
 
-    
+
     <script src="js/script.js"></script>
 </body>
 </html>
